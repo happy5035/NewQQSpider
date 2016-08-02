@@ -3,7 +3,7 @@ import requests
 import time
 from selenium import webdriver
 import selenium.webdriver.support.ui as ui
-import  os
+import  traceback
 
 
 class SpiderMessage(object):
@@ -125,6 +125,7 @@ class GetCookie(object):
                     print "Get the cookie of QQ:%s successfully!(共%d个键值对)" % (account, len(cookie))
                     return cookie
             except Exception:
+                print  traceback.format_exc()
                 failure = failure + 1
             except KeyboardInterrupt, e:
                 raise e

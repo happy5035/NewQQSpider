@@ -25,8 +25,8 @@ class InitMessages(object):
         self.fail_time = 2  # 打开网页失败几次不再打开
         self.timeout = 3  # 打开网页设置几秒为超时
         self.step = 500  # 设置爬了step个QQ以后进行备份
-        self.qqbitset = BitVector.BitVector(size=2000000000)  # 用35亿个位作判重
-        self.init_qqbitset()
+        # self.qqbitset = BitVector.BitVector(size=2000000000)  # 用35亿个位作判重
+        # self.init_qqbitset()
         if len(self.my_qq) == 0:
             print('QQ账号都没有cookie，请先获取cookie！')
 

@@ -76,8 +76,11 @@ class SpideController(object):
                 self.my_messages.qq_had_spided.append(qq)
                 try:
                     for elem in spidermessage.newQQ:
-                        if not self.my_messages.qqbitset[int(elem)]:  # 判断该QQ是否已经爬过
-                            self.my_messages.qqbitset[int(elem)] = 1
+                        # if not self.my_messages.qqbitset[int(elem)]:  # 判断该QQ是否已经爬过
+                        if (int(elem) not in self.my_messages.qq_for_spide) and (
+                            int(elem) not in self.my_messages.qq_fail_spided) and (
+                            int(elem) not in self.my_messages.qq_had_spided):
+                            # self.my_messages.qqbitset[int(elem)] = 1
                             self.my_messages.qq_for_spide.append(elem)  # 加入待爬列表
                             self.my_messages.qq_for_spide_num += 1
                 except Exception, e:
