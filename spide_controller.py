@@ -18,8 +18,9 @@ class SpideController(object):
         self.my_messages = my_messages
         self.changer = public_methods.Changing(self.my_messages)  # 新建一个对象，用来更换QQ，更换Cookie
         self.mongo = pymongo.MongoClient('localhost', 27017)
+        print "open db"
         self.db = self.mongo['QQ']  # 打开MongoDB的QQ数据库
-
+        print "create QQ"
     def beginer(self):
         while self.my_messages.qq_for_spide_num > 0:  # 如果待爬列表里有QQ则继续抓取
             index1 = self.my_messages.step  # 待爬QQ列表太大，出于性能考虑，采用下标的方式取QQ
