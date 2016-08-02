@@ -86,10 +86,10 @@ class SpideController(object):
                             self.my_messages.qq_for_spide_num += 1
                 except Exception, e:
                     print elem
-                    # print traceback.format_exc()
+                    print traceback.format_exc()
                     pass
             else:
                 self.my_messages.qq_fail_spided.append(qq)
         except Exception, e:
-            # print traceback.format_exc()
+            print traceback.format_exc()
             self.my_messages.qq_fail_spided.append(qq)
